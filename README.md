@@ -1,4 +1,4 @@
-# Custom_Domain_UniFi_VPN
+## Custom Domain UniFi VPN
 Using custom domain for UniFi VPN
 
 1)	Register for Free Cloudflare account, https://www.cloudflare.com/plans/
@@ -6,7 +6,9 @@ Using custom domain for UniFi VPN
 3)	It will ask for your domain “My_Domain.com" it will then provide you with two DNS entries to add to your hosting provider, this will then mean that Cloudflare will manage your DNS entires.  Personally worth it as Cloudflare is quick and has lots of features.  
 
 Once Cloudflare is managing your domains go to your domain, then DNS.
+
 4)	Add a A record for what ever you want your VPN address to be “vpn.mjdix.ch" put the IP address as “172.1.1.1” (place holder).  
+
 5)	Go to https://www.dnsomatic.com register for an account, then add a service, “Cloudflare” 
 
 Email is the email you used to setup cloudflare,
