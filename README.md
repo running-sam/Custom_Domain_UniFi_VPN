@@ -7,14 +7,14 @@ Using custom domain for UniFi VPN
 
 Once Cloudflare is managing your domains go to your domain, then DNS.
 
-4)	Add a A record for what ever you want your VPN address to be “vpn.mjdix.ch" put the IP address as “172.1.1.1” (place holder).  
+4)	Add a A record for what ever you want your VPN address to be “vpn.my_domain.com" put the IP address as “172.1.1.1” (place holder).  
 
 5)	Go to https://www.dnsomatic.com register for an account, then add a service, “Cloudflare” 
 
 Email is the email you used to setup cloudflare,
 API Token is the cloudflare “Global API Key” on the overview page for your domain on the right hand side towards the bottom, click get your API token.  
-Hostname is the new “A” record i.e. “something.MY_Domain.com"
-Domain is your domain “My_Domain"
+Hostname is the new “A” record i.e. “vpn.MY_Domain.com"
+Domain is your domain “My_Domain.com"
 Then “update account info”
 
 6)	Then on UDM Pro, “settings” - “Internet” - “Primary Internet” (or which ever you want” - “Dynamic DNS” - “Create New Dynamic DNS”
@@ -27,7 +27,8 @@ Save,
 
 You can then look at DNSoMATIC refresh the page you should see your IP updated, if you then go to Cloudflare and refresh your DNS records you will notice the place holder is now your public ip.  
 
-On the UDM Pro, go - VPN - VPN Server - 10CH “WireGuard” - “Use alternative address for clients” add your new domain “something.My_Domain.com"
+On the UDM Pro, go - VPN - VPN Server - Wireguard VPN - “Use alternative address for clients” add your new domain “vpn.My_Domain.com"
 
 When you download the config files for clients this new domain will then be in place of the IP in the config.  I would suggest updating the “Allowed IP’s” in the config files to be “0.0.0.0/0” this will send all traffic over the VPN.  
 
+an alternative to DNSoMatic is to use ddclient to update Cloudflare (https://github.com/running-sam/ddclient_with_cloudflare)
